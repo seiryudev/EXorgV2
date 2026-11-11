@@ -563,6 +563,31 @@ currentUser=session?.user||null;
 
 renderQuiz();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "TEU_API_URL";
+const SUPABASE_KEY = "TUA_PUBLISHABLE_KEY";
+
+const supabase = window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+console.log("EXorg conectado ao Supabase!");
+supabase.from("workspaces")
+.select("*")
+.limit(1)
+.then(({ data, error }) => {
+if (error) {
+console.error("Erro Supabase:", error.message);
+} else {
+console.log("EXorg ligado com sucesso!", data);
+}
+});
+
+</script>
+A
 </body>
 </html>
 
