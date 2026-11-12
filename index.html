@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#080808">
 <title>EXorg | Command Center</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://www.google.com/url?q=https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2&source=gmail&ust=1794600910405000&sa=E"></script>
 
 <style>
 :root{
@@ -19,103 +19,26 @@
 --border:#292929;
 }
 *{box-sizing:border-box}
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:Arial,sans-serif;
-}
-header{
-padding:17px 5%;
-border-bottom:1px solid var(--border);
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-background:#080808f2;
-z-index:10;
-}
-.logo{
-font-size:23px;
-font-weight:900;
-letter-spacing:3px;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;}
+header{padding:17px 5%;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#080808f2;z-index:10;}
+.logo{font-size:23px;font-weight:900;letter-spacing:3px;}
 .logo span{color:var(--gold)}
-main{
-max-width:1150px;
-margin:auto;
-padding:28px 5%;
-min-height:80vh;
-}
+main{max-width:1150px;margin:auto;padding:28px 5%;min-height:80vh;}
 h1{font-size:clamp(32px,7vw,58px);margin:12px 0}
 h2{font-size:23px}
 p{color:var(--muted);line-height:1.6}
-.eyebrow,small{
-color:var(--gold);
-letter-spacing:2px;
-font-weight:bold;
-font-size:11px;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:14px;
-}
-.card{
-background:var(--panel);
-border:1px solid var(--border);
-padding:20px;
-border-radius:12px;
-margin:12px 0;
-}
-button{
-background:var(--gold);
-color:#080808;
-border:0;
-border-radius:7px;
-padding:12px 16px;
-font-weight:bold;
-cursor:pointer;
-margin:4px 3px 4px 0;
-}
-button.secondary{
-background:var(--panel2);
-color:var(--text);
-border:1px solid var(--border);
-}
-input,select,textarea{
-width:100%;
-padding:13px;
-background:#090909;
-color:white;
-border:1px solid var(--border);
-border-radius:7px;
-margin:7px 0 14px;
-}
+.eyebrow,small{color:var(--gold);letter-spacing:2px;font-weight:bold;font-size:11px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.card{background:var(--panel);border:1px solid var(--border);padding:20px;border-radius:12px;margin:12px 0;}
+button{background:var(--gold);color:#080808;border:0;border-radius:7px;padding:12px 16px;font-weight:bold;cursor:pointer;margin:4px 3px 4px 0;}
+button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border);}
+input,select,textarea{width:100%;padding:13px;background:#090909;color:white;border:1px solid var(--border);border-radius:7px;margin:7px 0 14px;}
 label{font-size:13px;color:var(--muted)}
 .hidden{display:none!important}
 .actions{display:flex;gap:7px;flex-wrap:wrap}
-.tag{
-color:var(--gold);
-border:1px solid #57451e;
-padding:5px 8px;
-border-radius:20px;
-font-size:11px;
-}
-.notice{
-padding:12px;
-background:#191919;
-color:var(--gold);
-border-radius:7px;
-margin:12px 0;
-}
-footer{
-text-align:center;
-border-top:1px solid var(--border);
-padding:25px;
-color:var(--muted);
-}
+.tag{color:var(--gold);border:1px solid #57451e;padding:5px 8px;border-radius:20px;font-size:11px;}
+.notice{padding:12px;background:#191919;color:var(--gold);border-radius:7px;margin:12px 0;}
+footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:var(--muted);}
 </style>
 </head>
 
@@ -131,7 +54,6 @@ color:var(--muted);
 
 <main>
 
-<!-- INÍCIO -->
 <section id="home">
 <div style="padding:35px 0">
 <div class="eyebrow">EXORG ECOSYSTEM</div>
@@ -143,145 +65,59 @@ color:var(--muted);
 
 <h2>Plataformas integradas</h2>
 <div class="grid">
-
-<div class="card">
-<small>EDUCAÇÃO</small>
-<h3>EXorg MT</h3>
-<p>Gestão académica, aprendizagem e acompanhamento escolar.</p>
-<button onclick="showPage('student')">Aceder</button>
-</div>
-
-<div class="card">
-<small>GESTÃO</small>
-<h3>Áurea Manager</h3>
-<p>Gestão financeira e operações.</p>
-<button onclick="showPage('aurea')">Abrir</button>
-</div>
-
-<div class="card">
-<small>COMÉRCIO</small>
-<h3>Áurea Lifestyle</h3>
-<p>Área comercial e organização de vendas.</p>
-<button onclick="showPage('aurea')">Abrir</button>
-</div>
-
+<div class="card"><small>EDUCAÇÃO</small><h3>EXorg MT</h3><p>Gestão académica, aprendizagem e acompanhamento escolar.</p><button onclick="showPage('student')">Aceder</button></div>
+<div class="card"><small>GESTÃO</small><h3>Áurea Manager</h3><p>Gestão financeira e operações.</p><button onclick="showPage('aurea')">Abrir</button></div>
+<div class="card"><small>COMÉRCIO</small><h3>Áurea Lifestyle</h3><p>Área comercial e organização de vendas.</p><button onclick="showPage('aurea')">Abrir</button></div>
 </div>
 </section>
 
-<!-- LOGIN -->
 <section id="login" class="hidden">
 <div class="card" style="max-width:520px;margin:25px auto">
 <div class="eyebrow">IDENTIFICAÇÃO</div>
 <h2>Entrar no EXorg</h2>
-
-<label>Email</label>
-<input id="email" type="email" placeholder="teu@email.com">
-
-<label>Palavra-passe</label>
-<input id="password" type="password" placeholder="Palavra-passe">
-
+<label>Email</label><input id="email" type="email" placeholder="teu@email.com">
+<label>Palavra-passe</label><input id="password" type="password" placeholder="Palavra-passe">
 <div class="actions">
 <button onclick="login()">Entrar</button>
 <button class="secondary" onclick="showPage('register')">Criar conta</button>
 </div>
-
 <p id="authMessage"></p>
 </div>
 </section>
 
-<!-- REGISTO -->
 <section id="register" class="hidden">
 <div class="card" style="max-width:600px;margin:20px auto">
 <div class="eyebrow">EXORG MT · NOVA CONTA</div>
 <h2>Registo do aluno</h2>
-
-<label>Nome completo</label>
-<input id="regName" placeholder="Nome e apelido">
-
-<label>Email</label>
-<input id="regEmail" type="email" placeholder="Email">
-
-<label>Palavra-passe</label>
-<input id="regPassword" type="password" placeholder="Mínimo 8 caracteres">
-
-<label>Ano letivo</label>
-<select id="regYear">
-<option value="">A carregar anos letivos...</option>
-</select>
-
-<label>Classe</label>
-<select id="regClass" onchange="loadGroups()">
-<option value="">Escolhe a classe</option>
-</select>
-
-<label>Turma</label>
-<select id="regGroup">
-<option value="">Escolhe primeiro a classe</option>
-</select>
-
-<p>O número de presença será atribuído após validação da matrícula pela administração.</p>
-
+<label>Nome completo</label><input id="regName" placeholder="Nome e apelido">
+<label>Email</label><input id="regEmail" type="email" placeholder="Email">
+<label>Palavra-passe</label><input id="regPassword" type="password" placeholder="Mínimo 8 caracteres">
+<label>Ano letivo</label><select id="regYear"><option value="">A carregar anos letivos...</option></select>
+<label>Classe</label><select id="regClass" onchange="loadGroups()"><option value="">Escolhe a classe</option></select>
+<label>Turma</label><select id="regGroup"><option value="">Escolhe primeiro a classe</option></select>
 <button onclick="register()">Criar conta e solicitar matrícula</button>
 <button class="secondary" onclick="showPage('login')">Voltar</button>
-
 <p id="registerMessage"></p>
 </div>
 </section>
 
-<!-- PORTAL DO ALUNO -->
 <section id="student" class="hidden">
 <div class="eyebrow">EXORG MT · MADEIRA TRINDADE</div>
 <h1>Portal do aluno</h1>
 <p id="studentWelcome">Área académica do estudante.</p>
-
 <div class="grid">
-
-<div class="card">
-<small>IDENTIFICAÇÃO</small>
-<h3>Meu perfil académico</h3>
-<div id="studentProfile">A carregar...</div>
+<div class="card"><small>IDENTIFICAÇÃO</small><h3>Meu perfil académico</h3><div id="studentProfile">A carregar...</div></div>
+<div class="card"><small>MATRÍCULA</small><h3>Estado da matrícula</h3><div id="enrollmentInfo">A carregar...</div></div>
+<div class="card"><small>BEM-ESTAR</small><h3>Check-in diário</h3><p>Espaço privado de reflexão.</p><button onclick="showPage('wellbeing')">Começar</button></div>
+<div class="card"><small>APRENDIZAGEM</small><h3>Academia Pixel</h3><p>Desafios educativos.</p><button onclick="showPage('academy')">Jogar</button></div>
 </div>
-
-<div class="card">
-<small>MATRÍCULA</small>
-<h3>Estado da matrícula</h3>
-<div id="enrollmentInfo">A carregar...</div>
-</div>
-
-<div class="card">
-<small>BEM-ESTAR</small>
-<h3>Check-in diário</h3>
-<p>Espaço privado de reflexão, sem diagnóstico clínico.</p>
-<button onclick="showPage('wellbeing')">Começar</button>
-</div>
-
-<div class="card">
-<small>APRENDIZAGEM</small>
-<h3>Academia Pixel</h3>
-<p>Desafios educativos.</p>
-<button onclick="showPage('academy')">Jogar</button>
-</div>
-
-<div class="card">
-<small>PROGRESSO</small>
-<h3>Meu percurso</h3>
-<p id="progress">Acompanha o teu percurso.</p>
-<button onclick="loadProgress()">Consultar</button>
-</div>
-
-</div>
-
 <button class="secondary" onclick="logout()">Terminar sessão</button>
 </section>
 
-<!-- BEM-ESTAR -->
 <section id="wellbeing" class="hidden">
 <div class="eyebrow">EXORG MT · BEM-ESTAR</div>
 <h1>Como estás hoje?</h1>
-
 <div class="card">
-<p>Este espaço serve para reflexão e apoio. Não é diagnóstico nem classificação.</p>
-
 <label>Como te sentes hoje?</label>
 <select id="wellAnswer">
 <option value="">Escolhe uma resposta</option>
@@ -291,606 +127,167 @@ color:var(--muted);
 <option value="4">Bem</option>
 <option value="5">Muito bem</option>
 </select>
-
-<label>Queres deixar uma observação? (opcional)</label>
-<textarea id="wellNote" maxlength="500" placeholder="Escreve apenas se quiseres."></textarea>
-
+<label>Observação (opcional)</label><textarea id="wellNote" maxlength="500"></textarea>
 <button onclick="saveWellbeing()">Guardar</button>
 <p id="wellMessage"></p>
 </div>
 </section>
 
-<!-- ACADEMIA -->
 <section id="academy" class="hidden">
 <div class="eyebrow">ACADEMIA PIXEL</div>
 <h1>Desafio educativo</h1>
-
 <div class="card">
-<small>MATEMÁTICA</small>
-<h3 id="quizQuestion"></h3>
+<small id="quizSubject">MATEMÁTICA</small>
+<h3 id="quizQuestion">A carregar...</h3>
 <div id="quizOptions" class="grid"></div>
 <p id="quizResult"></p>
 <p id="quizPoints">Pontos: 0</p>
 </div>
+<button class="secondary" onclick="showPage('student')">Voltar</button>
 </section>
 
-<!-- ADMIN -->
-<section id="admin" class="hidden">
-<div class="eyebrow">EXORG CORE</div>
-<h1>Command Center</h1>
-
-<div class="card">
-<h3>Registar plataforma</h3>
-
-<label>Nome</label>
-<input id="platformName" placeholder="Nome da plataforma">
-
-<label>Descrição</label>
-<input id="platformDescription" placeholder="Finalidade">
-
-<button onclick="createPlatform()">Registar</button>
-<p id="platformMessage"></p>
-</div>
-
-<div class="card">
-<h3>Plataformas registadas</h3>
-<div id="platformList">A carregar...</div>
-</div>
-
-<div class="card">
-<h3>Estrutura académica</h3>
-<p>As classes, turmas, matrículas e presenças são geridas através das tabelas escolares do Supabase.</p>
-<button onclick="showPage('student')">Ver portal</button>
-</div>
-</section>
-
-<!-- ÁUREA -->
-<section id="aurea" class="hidden">
-<div class="eyebrow">ÁUREA ECOSYSTEM</div>
-<h1>Gestão e comércio</h1>
-
-<div class="grid">
-<div class="card">
-<h3>Áurea Manager</h3>
-<p>Gestão financeira e administrativa.</p>
-<span class="tag">Módulo preparado</span>
-</div>
-
-<div class="card">
-<h3>Áurea Lifestyle</h3>
-<p>Gestão comercial e vendas.</p>
-<span class="tag">Módulo preparado</span>
-</div>
-</div>
-</section>
-
-<div class="notice" id="notice">
-Configura o Supabase para activar as funcionalidades de conta e dados.
-</div>
-
+<div class="notice" id="notice">A verificar ligação ao Supabase...</div>
 </main>
-
-<footer>EXORG CORE · Arquitetura integrada · 2026</footer>
-
+<footer>EXORG CORE · 2026</footer>
 <script>
-// ======================================
-// CONFIGURAÇÃO ÚNICA DO SUPABASE
-// ======================================
-
-const SUPABASE_URL = "COLOCA_AQUI_O_TEU_API_URL";
-const SUPABASE_ANON_KEY = "COLOCA_AQUI_A_TUA_CHAVE_PUBLICA";
-
-const configured =
-SUPABASE_URL.startsWith("https://") &&
-!SUPABASE_URL.includes("COLOCA_AQUI") &&
-SUPABASE_ANON_KEY.length > 20 &&
-!SUPABASE_ANON_KEY.includes("COLOCA_AQUI");
-
-const db = configured
-? window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-)
-: null;
-
-let currentUser = null;
-let quizIndex = 0;
-let points = 0;
-
-// ======================================
-// NAVEGAÇÃO
-// ======================================
+const SUPABASE_URL = "O_TEU_URL";
+const SUPABASE_ANON_KEY = "A_TUA_CHAVE";
+const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("O_TEU_URL");
+const db = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+let currentUser = null, quizExercises = [], quizIndex = 0, points = 0;
 
 function showPage(page){
-document.querySelectorAll("main section").forEach(section=>{
-section.classList.add("hidden");
-});
-
+document.querySelectorAll("main section").forEach(s => s.classList.add("hidden"));
 document.getElementById(page)?.classList.remove("hidden");
-
 if(page==="register") loadSchoolOptions();
 if(page==="student") loadStudentData();
-if(page==="admin") loadPlatforms();
-if(page==="academy") renderQuiz();
+if(page==="academy") loadQuizExercises();
 }
-
-function msg(id,text){
-const element=document.getElementById(id);
-if(element) element.textContent=text;
-}
-
-// ======================================
-// ANOS, CLASSES E TURMAS
-// ======================================
+function msg(id,text){ const el = document.getElementById(id); if(el) el.textContent = text; }
 
 async function loadSchoolOptions(){
-
-if(!db){
-msg("registerMessage","Supabase ainda não configurado.");
-return;
-}
-
-const year=document.getElementById("regYear");
-const cls=document.getElementById("regClass");
-
-const [years,classes]=await Promise.all([
+if(!db) return msg("registerMessage","Supabase não configurado.");
+const [years,classes] = await Promise.all([
 db.from("school_years").select("id,name").order("name"),
 db.from("school_classes").select("id,name").order("name")
 ]);
-
-year.innerHTML='<option value="">Escolhe o ano letivo</option>';
-
-if(years.error){
-msg("registerMessage","Erro ao carregar anos letivos: "+years.error.message);
-}else{
-(years.data||[]).forEach(item=>{
-year.add(new Option(item.name,item.id));
-});
-}
-
-cls.innerHTML='<option value="">Escolhe a classe</option>';
-
-if(classes.error){
-msg("registerMessage","Erro ao carregar classes: "+classes.error.message);
-}else{
-(classes.data||[]).forEach(item=>{
-cls.add(new Option(item.name,item.id));
-});
-}
+const ySel = document.getElementById("regYear");
+const cSel = document.getElementById("regClass");
+ySel.innerHTML = '<option value="">Ano letivo</option>';
+(years.data||[]).forEach(i => ySel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
+cSel.innerHTML = '<option value="">Classe</option>';
+(classes.data||[]).forEach(i => cSel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
 }
 
 async function loadGroups(){
-
-const classId=document.getElementById("regClass").value;
-const yearId=document.getElementById("regYear").value;
-const group=document.getElementById("regGroup");
-
-group.innerHTML='<option value="">A carregar...</option>';
-
-if(!db || !classId || !yearId){
-group.innerHTML='<option value="">Escolhe classe e ano letivo</option>';
-return;
+const classId = document.getElementById("regClass").value;
+const yearId = document.getElementById("regYear").value;
+const gSel = document.getElementById("regGroup");
+gSel.innerHTML = '<option value="">A carregar...</option>';
+if(!db || !classId || !yearId) return gSel.innerHTML = '<option value="">Escolhe classe e ano</option>';
+const {data} = await db.from("class_groups").select("id,name").eq("class_id", classId).eq("school_year_id", yearId);
+gSel.innerHTML = '<option value="">Escolhe a turma</option>';
+(data||[]).forEach(i => gSel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
 }
 
-const {data,error}=await db
-.from("class_groups")
-.select("id,name")
-.eq("class_id",classId)
-.eq("school_year_id",yearId)
-.order("name");
-
-group.innerHTML='<option value="">Escolhe a turma</option>';
-
-if(error){
-msg("registerMessage","Erro ao carregar turmas: "+error.message);
-return;
-}
-
-(data||[]).forEach(item=>{
-group.add(new Option(item.name,item.id));
-});
-}
-
-document.getElementById("regYear").addEventListener("change",loadGroups);
-
-// ======================================
-// REGISTO
-// ======================================
+document.getElementById("regYear")?.addEventListener("change", loadGroups);
 
 async function register(){
+if(!db) return msg("registerMessage","Configura o Supabase.");
+const full_name = document.getElementById("regName").value.trim();
+const email = document.getElementById("regEmail").value.trim();
+const password = document.getElementById("regPassword").value;
+const school_year_id = document.getElementById("regYear").value;
+const class_id = document.getElementById("regClass").value;
+const group_id = document.getElementById("regGroup").value;
 
-if(!db){
-return msg("registerMessage","Configura o Supabase primeiro.");
-}
-
-const full_name=document.getElementById("regName").value.trim();
-const email=document.getElementById("regEmail").value.trim();
-const password=document.getElementById("regPassword").value;
-const school_year_id=document.getElementById("regYear").value;
-const class_id=document.getElementById("regClass").value;
-const group_id=document.getElementById("regGroup").value;
-
-if(!full_name || !email || password.length<8 ||
-!school_year_id || !class_id || !group_id){
-return msg("registerMessage","Preenche todos os campos correctamente.");
-}
-
-const {data,error}=await db.auth.signUp({
-email,
-password,
-options:{
-data:{
-full_name,
-school_year_id,
-class_id,
-group_id
-}
-}
-});
-
-if(error){
-return msg("registerMessage",error.message);
-}
-
+const {data, error} = await db.auth.signUp({ email, password, options: { data: { full_name, school_year_id, class_id, group_id } } });
+if(error) return msg("registerMessage", error.message);
 if(data.session){
-
-currentUser=data.user;
-
-const {error:enrollmentError}=await db.rpc("request_student_enrollment");
-
-if(enrollmentError){
-msg("registerMessage","Conta criada. Pedido de matrícula pendente: "+enrollmentError.message);
-}else{
-msg("registerMessage","Conta criada. Matrícula enviada para aprovação.");
-}
-
-}else{
-
-msg("registerMessage","Conta criada. Confirma o email e depois inicia sessão para concluir o pedido de matrícula.");
-
+currentUser = data.user;
+await db.rpc("request_student_enrollment");
+msg("registerMessage","Conta criada com sucesso!");
 }
 }
-
-// ======================================
-// LOGIN
-// ======================================
 
 async function login(){
-
-if(!db){
-return msg("authMessage","Configura o Supabase.");
-}
-
-const email=document.getElementById("email").value.trim();
-const password=document.getElementById("password").value;
-
-const {data,error}=await db.auth.signInWithPassword({
-email,
-password
-});
-
-if(error){
-return msg("authMessage",error.message);
-}
-
-currentUser=data.user;
-await routeUser();
-}
-
-async function routeUser(){
-
-if(!db || !currentUser)return;
-
-const meta=currentUser.user_metadata||{};
-
-if(meta.class_id && meta.group_id && meta.school_year_id){
-
-const {error}=await db.rpc("request_student_enrollment");
-
-if(error){
-console.warn("Matrícula:",error.message);
-}
-
-}
-
-const {data,error}=await db
-.from("profiles")
-.select("role")
-.eq("id",currentUser.id)
-.maybeSingle();
-
-if(error){
-console.error("Erro ao verificar perfil:",error.message);
-}
-
-if(data?.role==="admin"){
-showPage("admin");
-}else{
+if(!db) return msg("authMessage","Configura o Supabase.");
+const email = document.getElementById("email").value.trim();
+const password = document.getElementById("password").value;
+const {data, error} = await db.auth.signInWithPassword({ email, password });
+if(error) return msg("authMessage", error.message);
+currentUser = data.user;
 showPage("student");
-}
 }
 
 async function logout(){
-
-if(db){
-await db.auth.signOut();
-}
-
-currentUser=null;
+if(db) await db.auth.signOut();
+currentUser = null;
 showPage("home");
 }
 
-// ======================================
-// DADOS DO ALUNO
-// ======================================
-
 async function loadStudentData(){
-
-if(!db || !currentUser){
-msg("studentProfile","Inicia sessão para consultar o perfil.");
-msg("enrollmentInfo","Inicia sessão para consultar a matrícula.");
-return;
-}
-
+if(!db || !currentUser) return;
 msg("studentWelcome","Bem-vindo ao EXorg MT.");
-
-const {data:profile,error:profileError}=await db
-.from("student_profiles")
-.select("full_name,student_code")
-.eq("id",currentUser.id)
-.maybeSingle();
-
-if(profileError){
-msg("studentProfile","Não foi possível carregar o perfil.");
-}else{
-msg(
-"studentProfile",
-profile
-? `${profile.full_name} · Código: ${profile.student_code||"Por atribuir"}`
-: "Perfil académico ainda não disponível."
-);
+const {data:profile} = await db.from("student_profiles").select("full_name,student_code").eq("id", currentUser.id).maybeSingle();
+msg("studentProfile", profile ? `${profile.full_name} · Código: ${profile.student_code||"Pendente"}` : "Perfil pendente.");
+const {data:enr} = await db.from("enrollments").select("attendance_number,status,school_classes(name),class_groups(name)").eq("student_id", currentUser.id).limit(1).maybeSingle();
+msg("enrollmentInfo", enr ? `Estado: ${enr.status} · Classe: ${enr.school_classes?.name} · Turma: ${enr.class_groups?.name}` : "Sem matrícula ativa.");
 }
-
-const {data:enrollment,error}=await db
-.from("enrollments")
-.select("attendance_number,status,school_classes(name),class_groups(name),school_years(name)")
-.eq("student_id",currentUser.id)
-.order("created_at",{ascending:false})
-.limit(1)
-.maybeSingle();
-
-if(error || !enrollment){
-msg("enrollmentInfo","Matrícula ainda não encontrada ou pendente de sincronização.");
-return;
-}
-
-const cls=enrollment.school_classes?.name||"";
-const group=enrollment.class_groups?.name||"";
-const year=enrollment.school_years?.name||"";
-
-msg(
-"enrollmentInfo",
-`Estado: ${enrollment.status} · Classe: ${cls} · Turma: ${group} · Ano: ${year} · Número: ${enrollment.attendance_number}`
-);
-}
-
-async function loadProgress(){
-msg("progress","O módulo de progresso será ligado à tabela de resultados de aprendizagem.");
-}
-
-// ======================================
-// BEM-ESTAR
-// ======================================
 
 async function saveWellbeing(){
-
-const answer=document.getElementById("wellAnswer").value;
-const note=document.getElementById("wellNote").value.trim();
-
-if(!answer){
-return msg("wellMessage","Escolhe uma resposta.");
+const answer = document.getElementById("wellAnswer").value;
+const note = document.getElementById("wellNote").value.trim();
+if(!answer) return msg("wellMessage","Escolhe uma resposta.");
+if(!db || !currentUser) return msg("wellMessage","Inicia sessão.");
+const {error} = await db.from("wellbeing_answers").insert({ student_id: currentUser.id, question_text: "Como te sentes hoje?", answer_value: Number(answer), note: note||null });
+if(error) return msg("wellMessage", error.message);
+msg("wellMessage","Guardado com sucesso.");
 }
 
-if(!db || !currentUser){
-return msg("wellMessage","Inicia sessão primeiro.");
+async function loadQuizExercises(){
+quizExercises = [];
+quizIndex = 0;
+points = 0;
+if(db && currentUser){
+const {data: enr} = await db.from("enrollments").select("class_id").eq("student_id", currentUser.id).maybeSingle();
+if(enr?.class_id){
+const {data: exs} = await db.from("exercises").select("*").eq("class_id", enr.class_id);
+if(exs && exs.length > 0) quizExercises = exs;
 }
-
-const {error}=await db
-.from("wellbeing_answers")
-.insert({
-student_id:currentUser.id,
-question_text:"Como te sentes hoje?",
-answer_value:Number(answer),
-note:note||null
-});
-
-if(error){
-return msg("wellMessage",error.message);
 }
-
-msg("wellMessage","Resposta guardada.");
-document.getElementById("wellNote").value="";
-}
-
-// ======================================
-// ACADEMIA PIXEL
-// ======================================
-
-const quiz=[
-{
-q:"Quanto é 12 × 8?",
-options:["86","96","108"],
-answer:"96"
-},
-{
-q:"Quanto é √144?",
-options:["10","12","14"],
-answer:"12"
-},
-{
-q:"Quanto é 25% de 200?",
-options:["25","40","50"],
-answer:"50"
-},
-{
-q:"Quanto é 3² + 4²?",
-options:["25","49","12"],
-answer:"25"
-}
+if(quizExercises.length === 0){
+quizExercises = [
+{ subject: "Matemática", question_text: "Quanto é 12 × 8?", options: ["86", "96", "108"], correct_answer: "96" },
+{ subject: "Matemática", question_text: "Quanto é √144?", options: ["10", "12", "14"], correct_answer="12" }
 ];
+}
+renderQuiz();
+}
 
 function renderQuiz(){
-
-const item=quiz[quizIndex];
-
-msg("quizQuestion",item.q);
-
-const area=document.getElementById("quizOptions");
-area.innerHTML="";
-
-item.options.forEach(option=>{
-
-const btn=document.createElement("button");
-btn.className="secondary";
-btn.textContent=option;
-btn.onclick=()=>answerQuiz(option);
-
+if(quizExercises.length === 0) return msg("quizQuestion","Sem exercícios.");
+const item = quizExercises[quizIndex % quizExercises.length];
+msg("quizSubject", item.subject);
+msg("quizQuestion", item.question_text);
+const area = document.getElementById("quizOptions");
+area.innerHTML = "";
+(item.options || []).forEach(opt => {
+const btn = document.createElement("button");
+btn.className = "secondary";
+btn.textContent = opt;
+btn.onclick = () => answerQuiz(opt, item.correct_answer);
 area.append(btn);
-
 });
-
 }
 
-function answerQuiz(answer){
-
-if(answer===quiz[quizIndex].answer){
-points+=10;
-msg("quizResult","Resposta correcta. +10 pontos.");
-}else{
-msg("quizResult","Resposta incorrecta. Continua a aprender.");
-}
-
+function answerQuiz(selected, correct){
+if(selected === correct){ points += 10; msg("quizResult","Correto! +10 pts."); }
+else { msg("quizResult","Incorreto."); }
 msg("quizPoints","Pontos: "+points);
-
-quizIndex=(quizIndex+1)%quiz.length;
-
-setTimeout(renderQuiz,800);
+quizIndex++;
+setTimeout(() => { msg("quizResult",""); renderQuiz(); }, 900);
 }
-
-// ======================================
-// PLATAFORMAS
-// ======================================
-
-async function createPlatform(){
-
-if(!db){
-return msg("platformMessage","Configura o Supabase.");
-}
-
-const name=document.getElementById("platformName").value.trim();
-const description=document.getElementById("platformDescription").value.trim();
-
-if(!name){
-return msg("platformMessage","Indica o nome.");
-}
-
-const {error}=await db
-.from("applications")
-.insert({name,description});
-
-if(error){
-return msg("platformMessage",error.message);
-}
-
-msg("platformMessage","Registo enviado.");
-
-document.getElementById("platformName").value="";
-document.getElementById("platformDescription").value="";
-
-loadPlatforms();
-}
-
-async function loadPlatforms(){
-
-if(!db){
-return msg("platformList","Supabase não configurado.");
-}
-
-const {data,error}=await db
-.from("applications")
-.select("name,description")
-.order("name");
-
-if(error){
-return msg("platformList",error.message);
-}
-
-const area=document.getElementById("platformList");
-area.innerHTML="";
-
-(data||[]).forEach(item=>{
-
-const div=document.createElement("div");
-div.className="card";
-
-const title=document.createElement("strong");
-title.textContent=item.name;
-
-const desc=document.createElement("p");
-desc.textContent=item.description||"";
-
-div.append(title,desc);
-area.append(div);
-
-});
-
-if(!data || data.length===0){
-area.textContent="Ainda não existem plataformas registadas.";
-}
-}
-
-// ======================================
-// SESSÃO E INICIALIZAÇÃO
-// ======================================
-
-if(!configured){
-
-document.getElementById("notice").textContent=
-"Configuração do Supabase pendente. Introduz o URL e a chave pública.";
-
-}else if(!window.supabase){
-
-document.getElementById("notice").textContent=
-"Não foi possível carregar a biblioteca Supabase. Verifica a ligação à internet.";
-
-}else{
-
-document.getElementById("notice").textContent=
-"Supabase inicializado. Acesso sujeito às políticas de segurança da base de dados.";
-
-db.auth.getSession().then(({data,error})=>{
-
-if(error){
-console.error("Erro ao recuperar sessão:",error.message);
-return;
-}
-
-currentUser=data.session?.user||null;
-
-});
-
-db.auth.onAuthStateChange((_event,session)=>{
-
-currentUser=session?.user||null;
-
-});
-
-}
-
-renderQuiz();
-
 </script>
-
 </body>
 </html>
-
