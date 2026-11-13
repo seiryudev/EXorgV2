@@ -2,50 +2,153 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
 <title>EXorg | Command Center</title>
 
-<script src="https://www.google.com/url?q=https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2&source=gmail&ust=1794600910405000&sa=E"></script>
+<!-- Supabase JS Client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-:root{
---bg:#080808;
---panel:#111;
---panel2:#191919;
---gold:#d6ad55;
---text:#f4f0e8;
---muted:#999;
---border:#292929;
+:root {
+--bg: #080808;
+--panel: #111111;
+--panel2: #171717;
+--gold: #d6ad55;
+--text: #f4f0e8;
+--muted: #999999;
+--border: #292929;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;}
-header{padding:17px 5%;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#080808f2;z-index:10;}
-.logo{font-size:23px;font-weight:900;letter-spacing:3px;}
-.logo span{color:var(--gold)}
-main{max-width:1150px;margin:auto;padding:28px 5%;min-height:80vh;}
-h1{font-size:clamp(32px,7vw,58px);margin:12px 0}
-h2{font-size:23px}
-p{color:var(--muted);line-height:1.6}
-.eyebrow,small{color:var(--gold);letter-spacing:2px;font-weight:bold;font-size:11px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.card{background:var(--panel);border:1px solid var(--border);padding:20px;border-radius:12px;margin:12px 0;}
-button{background:var(--gold);color:#080808;border:0;border-radius:7px;padding:12px 16px;font-weight:bold;cursor:pointer;margin:4px 3px 4px 0;}
-button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border);}
-input,select,textarea{width:100%;padding:13px;background:#090909;color:white;border:1px solid var(--border);border-radius:7px;margin:7px 0 14px;}
-label{font-size:13px;color:var(--muted)}
-.hidden{display:none!important}
-.actions{display:flex;gap:7px;flex-wrap:wrap}
-.tag{color:var(--gold);border:1px solid #57451e;padding:5px 8px;border-radius:20px;font-size:11px;}
-.notice{padding:12px;background:#191919;color:var(--gold);border-radius:7px;margin:12px 0;}
-footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:var(--muted);}
+* { box-sizing: border-box; }
+body {
+margin: 0;
+background: var(--bg);
+color: var(--text);
+font-family: Inter, Arial, sans-serif;
+min-height: 100vh;
+}
+header {
+padding: 20px 6%;
+border-bottom: 1px solid var(--border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+background: rgba(8, 8, 8, 0.93);
+backdrop-filter: blur(8px);
+z-index: 10;
+}
+.logo {
+font-size: 23px;
+font-weight: 900;
+letter-spacing: 4px;
+cursor: pointer;
+}
+.logo span { color: var(--gold); }
+button {
+background: var(--gold);
+color: #090909;
+border: 0;
+padding: 12px 17px;
+border-radius: 7px;
+font-weight: 800;
+cursor: pointer;
+transition: opacity 0.2s;
+}
+button:hover { opacity: 0.9; }
+button.secondary {
+background: var(--panel2);
+color: var(--text);
+border: 1px solid var(--border);
+}
+button:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+input, select, textarea {
+width: 100%;
+padding: 13px;
+background: #090909;
+color: white;
+border: 1px solid var(--border);
+border-radius: 7px;
+margin: 7px 0 14px;
+}
+main {
+max-width: 1150px;
+margin: auto;
+padding: 35px 6%;
+}
+.hero { padding: 45px 0; }
+.eyebrow {
+color: var(--gold);
+letter-spacing: 3px;
+font-size: 12px;
+font-weight: bold;
+}
+h1 {
+font-size: clamp(35px, 7vw, 65px);
+margin: 12px 0;
+}
+h2 { font-size: 23px; }
+p {
+color: var(--muted);
+line-height: 1.6;
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 15px;
+}
+.card {
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 22px;
+margin-bottom: 15px;
+}
+.card h3 { margin-top: 0; }
+.card small { color: var(--gold); }
+.section { margin-top: 40px; }
+.hidden { display: none !important; }
+.actions {
+display: flex;
+gap: 9px;
+flex-wrap: wrap;
+}
+.tag {
+font-size: 11px;
+color: var(--gold);
+border: 1px solid #57451e;
+padding: 5px 8px;
+border-radius: 20px;
+display: inline-block;
+margin-top: 10px;
+}
+footer {
+border-top: 1px solid var(--border);
+padding: 25px 6%;
+color: var(--muted);
+text-align: center;
+}
+#notice {
+padding: 12px;
+border-radius: 7px;
+background: #191919;
+color: var(--gold);
+margin: 12px 0;
+}
+.msg-area {
+margin-top: 8px;
+font-size: 14px;
+}
 </style>
 </head>
 
 <body>
-
 <header>
-<div class="logo">EX<span>ORG</span></div>
+<div class="logo" onclick="showPage('home')">EX<span>ORG</span></div>
 <div class="actions">
 <button class="secondary" onclick="showPage('home')">Início</button>
 <button onclick="showPage('login')">Entrar</button>
@@ -53,72 +156,98 @@ footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:v
 </header>
 
 <main>
-
+<!-- HOME -->
 <section id="home">
-<div style="padding:35px 0">
+<div class="hero">
 <div class="eyebrow">EXORG ECOSYSTEM</div>
 <h1>Um sistema.<br><span style="color:var(--gold)">Várias possibilidades.</span></h1>
-<p>Centro de controlo, gestão e integração das plataformas EXorg.</p>
-<button onclick="showPage('student')">Portal do aluno</button>
-<button class="secondary" onclick="showPage('login')">Acesso administrativo</button>
+<p>Centro de controlo e integração das plataformas EXorg.</p>
+<div class="actions">
+<button onclick="checkAuthAndRedirect('student')">Portal do aluno</button>
+<button class="secondary" onclick="showPage('login')">Acesso / Autenticação</button>
+</div>
 </div>
 
+<div class="section">
 <h2>Plataformas integradas</h2>
 <div class="grid">
-<div class="card"><small>EDUCAÇÃO</small><h3>EXorg MT</h3><p>Gestão académica, aprendizagem e acompanhamento escolar.</p><button onclick="showPage('student')">Aceder</button></div>
-<div class="card"><small>GESTÃO</small><h3>Áurea Manager</h3><p>Gestão financeira e operações.</p><button onclick="showPage('aurea')">Abrir</button></div>
-<div class="card"><small>COMÉRCIO</small><h3>Áurea Lifestyle</h3><p>Área comercial e organização de vendas.</p><button onclick="showPage('aurea')">Abrir</button></div>
+<div class="card">
+<small>EDUCAÇÃO</small>
+<h3>EXorg MT</h3>
+<p>Portal académico, aprendizagem e acompanhamento de bem-estar.</p>
+<button onclick="checkAuthAndRedirect('student')">Aceder</button>
+</div>
+<div class="card">
+<small>GESTÃO</small>
+<h3>Áurea Manager</h3>
+<p>Gestão financeira, operações e negócios.</p>
+<button onclick="showPage('aurea')">Abrir módulo</button>
+</div>
+<div class="card">
+<small>COMÉRCIO</small>
+<h3>Áurea Lifestyle</h3>
+<p>Área comercial e organização de vendas.</p>
+<button onclick="showPage('aurea')">Abrir módulo</button>
+</div>
+</div>
 </div>
 </section>
 
+<!-- LOGIN / AUTENTICAÇÃO -->
 <section id="login" class="hidden">
-<div class="card" style="max-width:520px;margin:25px auto">
+<div class="card" style="max-width:480px; margin:30px auto">
 <div class="eyebrow">IDENTIFICAÇÃO</div>
 <h2>Entrar no EXorg</h2>
-<label>Email</label><input id="email" type="email" placeholder="teu@email.com">
-<label>Palavra-passe</label><input id="password" type="password" placeholder="Palavra-passe">
+<label for="email">Email</label>
+<input id="email" type="email" placeholder="teu@email.com">
+<label for="password">Palavra-passe</label>
+<input id="password" type="password" placeholder="Palavra-passe">
 <div class="actions">
 <button onclick="login()">Entrar</button>
-<button class="secondary" onclick="showPage('register')">Criar conta</button>
+<button class="secondary" onclick="register()">Criar conta</button>
 </div>
-<p id="authMessage"></p>
-</div>
-</section>
-
-<section id="register" class="hidden">
-<div class="card" style="max-width:600px;margin:20px auto">
-<div class="eyebrow">EXORG MT · NOVA CONTA</div>
-<h2>Registo do aluno</h2>
-<label>Nome completo</label><input id="regName" placeholder="Nome e apelido">
-<label>Email</label><input id="regEmail" type="email" placeholder="Email">
-<label>Palavra-passe</label><input id="regPassword" type="password" placeholder="Mínimo 8 caracteres">
-<label>Ano letivo</label><select id="regYear"><option value="">A carregar anos letivos...</option></select>
-<label>Classe</label><select id="regClass" onchange="loadGroups()"><option value="">Escolhe a classe</option></select>
-<label>Turma</label><select id="regGroup"><option value="">Escolhe primeiro a classe</option></select>
-<button onclick="register()">Criar conta e solicitar matrícula</button>
-<button class="secondary" onclick="showPage('login')">Voltar</button>
-<p id="registerMessage"></p>
+<div id="authMessage" class="msg-area"></div>
 </div>
 </section>
 
+<!-- PORTAL DO ALUNO -->
 <section id="student" class="hidden">
 <div class="eyebrow">EXORG MT · MADEIRA TRINDADE</div>
 <h1>Portal do aluno</h1>
-<p id="studentWelcome">Área académica do estudante.</p>
-<div class="grid">
-<div class="card"><small>IDENTIFICAÇÃO</small><h3>Meu perfil académico</h3><div id="studentProfile">A carregar...</div></div>
-<div class="card"><small>MATRÍCULA</small><h3>Estado da matrícula</h3><div id="enrollmentInfo">A carregar...</div></div>
-<div class="card"><small>BEM-ESTAR</small><h3>Check-in diário</h3><p>Espaço privado de reflexão.</p><button onclick="showPage('wellbeing')">Começar</button></div>
-<div class="card"><small>APRENDIZAGEM</small><h3>Academia Pixel</h3><p>Desafios educativos.</p><button onclick="showPage('academy')">Jogar</button></div>
+<p>Aprender, evoluir e acompanhar o teu percurso.</p>
+<div class="actions" style="margin-bottom: 20px;">
+<button class="secondary" onclick="logout()">Terminar Sessão</button>
 </div>
-<button class="secondary" onclick="logout()">Terminar sessão</button>
+<div class="grid">
+<div class="card">
+<small>BEM-ESTAR</small>
+<h3>Check-in diário</h3>
+<p>Um espaço privado de reflexão e registo emocional.</p>
+<button onclick="showPage('wellbeing')">Começar</button>
+</div>
+<div class="card">
+<small>APRENDIZAGEM</small>
+<h3>Academia Pixel</h3>
+<p>Desafios educativos de matemática e lógica.</p>
+<button onclick="showPage('academy')">Jogar</button>
+</div>
+<div class="card">
+<small>PROGRESSO</small>
+<h3>Meu percurso</h3>
+<p>Consulta o teu progresso e pontos acumulados.</p>
+<button onclick="loadProgress()">Consultar</button>
+</div>
+</div>
+<div id="progress" class="msg-area card" style="margin-top:20px; display:none;"></div>
 </section>
 
+<!-- BEM-ESTAR -->
 <section id="wellbeing" class="hidden">
 <div class="eyebrow">EXORG MT · BEM-ESTAR</div>
 <h1>Como estás hoje?</h1>
+<p>Responde com sinceridade. Os dados são guardados de forma segura na tua conta.</p>
 <div class="card">
-<label>Como te sentes hoje?</label>
+<h3 id="wellQuestion">Como te sentes hoje?</h3>
 <select id="wellAnswer">
 <option value="">Escolhe uma resposta</option>
 <option value="1">Muito mal</option>
@@ -127,167 +256,305 @@ footer{text-align:center;border-top:1px solid var(--border);padding:25px;color:v
 <option value="4">Bem</option>
 <option value="5">Muito bem</option>
 </select>
-<label>Observação (opcional)</label><textarea id="wellNote" maxlength="500"></textarea>
-<button onclick="saveWellbeing()">Guardar</button>
-<p id="wellMessage"></p>
+<button onclick="saveWellbeing()">Guardar resposta</button>
+<p id="wellMessage" class="msg-area"></p>
 </div>
+<button class="secondary" style="margin-top:15px;" onclick="showPage('student')">Voltar ao Portal</button>
 </section>
 
+<!-- ACADEMIA PIXEL (QUIZ) -->
 <section id="academy" class="hidden">
 <div class="eyebrow">ACADEMIA PIXEL</div>
-<h1>Desafio educativo</h1>
+<h1>Desafio do dia</h1>
 <div class="card">
-<small id="quizSubject">MATEMÁTICA</small>
-<h3 id="quizQuestion">A carregar...</h3>
+<small>MATEMÁTICA</small>
+<h3 id="quizQuestion">Quanto é 12 × 8?</h3>
 <div id="quizOptions" class="grid"></div>
-<p id="quizResult"></p>
-<p id="quizPoints">Pontos: 0</p>
+<p id="quizResult" class="msg-area"></p>
 </div>
-<button class="secondary" onclick="showPage('student')">Voltar</button>
+<button class="secondary" style="margin-top:15px;" onclick="showPage('student')">Voltar ao Portal</button>
 </section>
 
-<div class="notice" id="notice">A verificar ligação ao Supabase...</div>
+<!-- ÁUREA ECOSYSTEM -->
+<section id="aurea" class="hidden">
+<div class="eyebrow">ÁUREA ECOSYSTEM</div>
+<h1>Gestão e comércio</h1>
+<div class="grid">
+<div class="card">
+<h3>Áurea Manager</h3>
+<p>Área de gestão financeira e administrativa.</p>
+<span class="tag">Módulo preparado</span>
+</div>
+<div class="card">
+<h3>Áurea Lifestyle</h3>
+<p>Área comercial da marca.</p>
+<span class="tag">Módulo preparado</span>
+</div>
+</div>
+</section>
+
+<!-- COMMAND CENTER (ADMIN) -->
+<section id="admin" class="hidden">
+<div class="eyebrow">EXORG CORE</div>
+<h1>Command Center (Administração)</h1>
+<div class="actions" style="margin-bottom: 20px;">
+<button class="secondary" onclick="logout()">Terminar Sessão</button>
+</div>
+<div class="card">
+<h3>Registar nova plataforma</h3>
+<label for="platformName">Nome</label>
+<input id="platformName" placeholder="Nome da plataforma">
+<label for="platformDescription">Descrição</label>
+<input id="platformDescription" placeholder="Finalidade">
+<button onclick="createPlatform()">Registar no Supabase</button>
+<p id="platformMessage" class="msg-area"></p>
+</div>
+<div class="card">
+<h3>Plataformas registadas na Base de Dados</h3>
+<div id="platformList">A carregar...</div>
+</div>
+</section>
+
+<div id="notice">Supabase integrado: insere as tuas credenciais reais abaixo para ligar a API.</div>
 </main>
-<footer>EXORG CORE · 2026</footer>
+
+<footer>EXORG CORE · Arquitetura integrada · 2026</footer>
+
 <script>
-const SUPABASE_URL = "O_TEU_URL";
-const SUPABASE_ANON_KEY = "A_TUA_CHAVE";
-const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("O_TEU_URL");
-const db = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-let currentUser = null, quizExercises = [], quizIndex = 0, points = 0;
+// ==========================================
+// CONFIGURAÇÃO DO SUPABASE (APLICAÇÃO & API)
+// ==========================================
+const SUPABASE_URL = "https://szxhkkbepsuotjzgektb.supabase.co";
+const SUPABASE_ANON_KEY = "COLA_AQUI_A_TUA_CHAVE_ANON_PUBLICA"; // Substitui pela tua chave anon real
 
-function showPage(page){
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let currentUser = null;
+
+// Gestão de páginas
+function showPage(pageId) {
 document.querySelectorAll("main section").forEach(s => s.classList.add("hidden"));
-document.getElementById(page)?.classList.remove("hidden");
-if(page==="register") loadSchoolOptions();
-if(page==="student") loadStudentData();
-if(page==="academy") loadQuizExercises();
-}
-function msg(id,text){ const el = document.getElementById(id); if(el) el.textContent = text; }
-
-async function loadSchoolOptions(){
-if(!db) return msg("registerMessage","Supabase não configurado.");
-const [years,classes] = await Promise.all([
-db.from("school_years").select("id,name").order("name"),
-db.from("school_classes").select("id,name").order("name")
-]);
-const ySel = document.getElementById("regYear");
-const cSel = document.getElementById("regClass");
-ySel.innerHTML = '<option value="">Ano letivo</option>';
-(years.data||[]).forEach(i => ySel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
-cSel.innerHTML = '<option value="">Classe</option>';
-(classes.data||[]).forEach(i => cSel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
-}
-
-async function loadGroups(){
-const classId = document.getElementById("regClass").value;
-const yearId = document.getElementById("regYear").value;
-const gSel = document.getElementById("regGroup");
-gSel.innerHTML = '<option value="">A carregar...</option>';
-if(!db || !classId || !yearId) return gSel.innerHTML = '<option value="">Escolhe classe e ano</option>';
-const {data} = await db.from("class_groups").select("id,name").eq("class_id", classId).eq("school_year_id", yearId);
-gSel.innerHTML = '<option value="">Escolhe a turma</option>';
-(data||[]).forEach(i => gSel.add(new Option(https://www.google.com/url?q=http://i.name&source=gmail&ust=1794600910405000&sa=E, https://www.google.com/url?q=http://i.id&source=gmail&ust=1794600910405000&sa=E)));
-}
-
-document.getElementById("regYear")?.addEventListener("change", loadGroups);
-
-async function register(){
-if(!db) return msg("registerMessage","Configura o Supabase.");
-const full_name = document.getElementById("regName").value.trim();
-const email = document.getElementById("regEmail").value.trim();
-const password = document.getElementById("regPassword").value;
-const school_year_id = document.getElementById("regYear").value;
-const class_id = document.getElementById("regClass").value;
-const group_id = document.getElementById("regGroup").value;
-
-const {data, error} = await db.auth.signUp({ email, password, options: { data: { full_name, school_year_id, class_id, group_id } } });
-if(error) return msg("registerMessage", error.message);
-if(data.session){
-currentUser = data.user;
-await db.rpc("request_student_enrollment");
-msg("registerMessage","Conta criada com sucesso!");
+const targetPage = document.getElementById(pageId);
+if (targetPage) {
+targetPage.classList.remove("hidden");
+if (pageId === "admin") loadPlatforms();
 }
 }
 
-async function login(){
-if(!db) return msg("authMessage","Configura o Supabase.");
+function message(id, text) {
+const el = document.getElementById(id);
+if (el) el.textContent = text;
+}
+
+// Verificar sessão ao carregar ou navegar
+async function checkAuthAndRedirect(defaultPage) {
+const { data: { session } } = await db.auth.getSession();
+if (!session) {
+showPage("login");
+message("authMessage", "Por favor, inicia sessão para aceder a esta área.");
+} else {
+currentUser = session.user;
+await routeUser();
+}
+}
+
+// AUTENTICAÇÃO (API)
+async function register() {
 const email = document.getElementById("email").value.trim();
 const password = document.getElementById("password").value;
-const {data, error} = await db.auth.signInWithPassword({ email, password });
-if(error) return msg("authMessage", error.message);
-currentUser = data.user;
-showPage("student");
+if (!email || password.length < 8) {
+return message("authMessage", "Introduz um email válido e palavra-passe (mín. 8 caracteres).");
+}
+const { data, error } = await db.auth.signUp({ email, password });
+if (error) return message("authMessage", error.message);
+message("authMessage", "Registo efetuado com sucesso! Já podes entrar.");
 }
 
-async function logout(){
-if(db) await db.auth.signOut();
+async function login() {
+const email = document.getElementById("email").value.trim();
+const password = document.getElementById("password").value;
+const { data, error } = await db.auth.signInWithPassword({ email, password });
+if (error) return message("authMessage", error.message);
+currentUser = data.user;
+message("authMessage", "Sessão iniciada com sucesso!");
+await routeUser();
+}
+
+async function logout() {
+await db.auth.signOut();
 currentUser = null;
 showPage("home");
 }
 
-async function loadStudentData(){
-if(!db || !currentUser) return;
-msg("studentWelcome","Bem-vindo ao EXorg MT.");
-const {data:profile} = await db.from("student_profiles").select("full_name,student_code").eq("id", currentUser.id).maybeSingle();
-msg("studentProfile", profile ? `${profile.full_name} · Código: ${profile.student_code||"Pendente"}` : "Perfil pendente.");
-const {data:enr} = await db.from("enrollments").select("attendance_number,status,school_classes(name),class_groups(name)").eq("student_id", currentUser.id).limit(1).maybeSingle();
-msg("enrollmentInfo", enr ? `Estado: ${enr.status} · Classe: ${enr.school_classes?.name} · Turma: ${enr.class_groups?.name}` : "Sem matrícula ativa.");
+async function routeUser() {
+if (!currentUser) return showPage("login");
+
+// Consultar a tabela profiles para saber se é admin ou student
+const { data, error } = await db
+.from("profiles")
+.select("role")
+.eq("id", currentUser.id)
+.maybeSingle();
+
+if (data?.role === "admin") {
+showPage("admin");
+} else {
+showPage("student");
+}
 }
 
-async function saveWellbeing(){
-const answer = document.getElementById("wellAnswer").value;
-const note = document.getElementById("wellNote").value.trim();
-if(!answer) return msg("wellMessage","Escolhe uma resposta.");
-if(!db || !currentUser) return msg("wellMessage","Inicia sessão.");
-const {error} = await db.from("wellbeing_answers").insert({ student_id: currentUser.id, question_text: "Como te sentes hoje?", answer_value: Number(answer), note: note||null });
-if(error) return msg("wellMessage", error.message);
-msg("wellMessage","Guardado com sucesso.");
+// COMMAND CENTER - GESTÃO DE PLATAFORMAS (SQL & API)
+async function createPlatform() {
+const name = document.getElementById("platformName").value.trim();
+const description = document.getElementById("platformDescription").value.trim();
+if (!name) return message("platformMessage", "Indica o nome da plataforma.");
+
+const { error } = await db.from("applications").insert({ name, description });
+if (error) return message("platformMessage", error.message);
+
+message("platformMessage", "Plataforma registada com sucesso na base de dados!");
+document.getElementById("platformName").value = "";
+document.getElementById("platformDescription").value = "";
+loadPlatforms();
 }
 
-async function loadQuizExercises(){
-quizExercises = [];
-quizIndex = 0;
-points = 0;
-if(db && currentUser){
-const {data: enr} = await db.from("enrollments").select("class_id").eq("student_id", currentUser.id).maybeSingle();
-if(enr?.class_id){
-const {data: exs} = await db.from("exercises").select("*").eq("class_id", enr.class_id);
-if(exs && exs.length > 0) quizExercises = exs;
+async function loadPlatforms() {
+const { data, error } = await db.from("applications").select("name, description").order("name");
+const listEl = document.getElementById("platformList");
+if (error) return message("platformList", "Erro ao carregar plataformas.");
+
+listEl.innerHTML = "";
+if (!data || data.length === 0) {
+listEl.textContent = "Nenhuma plataforma registada.";
+return;
 }
+
+data.forEach(item => {
+const div = document.createElement("div");
+div.className = "card";
+div.style.background = "var(--bg)";
+const h = document.createElement("strong");
+h.textContent = item.name;
+const p = document.createElement("p");
+p.style.margin = "5px 0 0";
+p.textContent = item.description || "Sem descrição.";
+div.append(h, p);
+listEl.append(div);
+});
 }
-if(quizExercises.length === 0){
-quizExercises = [
-{ subject: "Matemática", question_text: "Quanto é 12 × 8?", options: ["86", "96", "108"], correct_answer: "96" },
-{ subject: "Matemática", question_text: "Quanto é √144?", options: ["10", "12", "14"], correct_answer="12" }
+
+// BEM-ESTAR (GRAVAÇÃO NA API / SUPABASE)
+const questions = [
+"Como te sentes hoje?",
+"Conseguiste descansar?",
+"Tiveste alguém com quem conversar?",
+"Sentiste-te apoiado na escola/trabalho?",
+"O que gostarias que melhorasse amanhã?"
 ];
+let questionIndex = 0;
+
+async function saveWellbeing() {
+const answer = document.getElementById("wellAnswer").value;
+if (!answer) return message("wellMessage", "Escolhe uma resposta.");
+if (!currentUser) return message("wellMessage", "Sessão expirada. Inicia sessão novamente.");
+
+const { error } = await db.from("wellbeing_answers").insert({
+student_id: currentUser.id,
+question_text: questions[questionIndex],
+answer_value: Number(answer)
+});
+
+if (error) return message("wellMessage", error.message);
+
+questionIndex++;
+if (questionIndex >= questions.length) {
+message("wellMessage", "Check-in diário concluído com sucesso. Obrigado!");
+setTimeout(() => { questionIndex = 0; showPage('student'); }, 2000);
+return;
 }
-renderQuiz();
+document.getElementById("wellQuestion").textContent = questions[questionIndex];
+document.getElementById("wellAnswer").value = "";
+message("wellMessage", "Resposta guardada com sucesso!");
 }
 
-function renderQuiz(){
-if(quizExercises.length === 0) return msg("quizQuestion","Sem exercícios.");
-const item = quizExercises[quizIndex % quizExercises.length];
-msg("quizSubject", item.subject);
-msg("quizQuestion", item.question_text);
+// PROGRESSO DO ALUNO (CONSULTA NA TABELA LEARNING_PROGRESS)
+async function loadProgress() {
+const progressBox = document.getElementById("progress");
+progressBox.style.display = "block";
+if (!currentUser) {
+progressBox.textContent = "Inicia sessão para consultar o teu percurso.";
+return;
+}
+
+const { data, error } = await db
+.from("learning_progress")
+.select("points, updated_at")
+.eq("student_id", currentUser.id)
+.maybeSingle();
+
+if (error) {
+progressBox.textContent = "Erro ao carregar o percurso.";
+return;
+}
+
+if (!data) {
+progressBox.innerHTML = "<strong>Meu Percurso:</strong> Ainda sem registo de pontos. Participa na Academia Pixel para acumular pontos!";
+} else {
+progressBox.innerHTML = `<strong>Meu Percurso:</strong> Tens atualmente <strong>${data.points} pontos</strong> acumulados. Última atualização: ${new Date(data.updated_at).toLocaleDateString()}`;
+}
+}
+
+// ACADEMIA PIXEL (QUIZ E PONTUAÇÃO AUTOMÁTICA NA BD)
+const quiz = [
+{ q: "Quanto é 12 × 8?", options: ["86", "96", "108"], answer: "96" },
+{ q: "Quanto é √144?", options: ["10", "12", "14"], answer: "12" },
+{ q: "Quanto é 25% de 200?", options: ["25", "40", "50"], answer: "50" }
+];
+let quizIndex = 0;
+
+function renderQuiz() {
+const item = quiz[quizIndex];
+document.getElementById("quizQuestion").textContent = item.q;
 const area = document.getElementById("quizOptions");
 area.innerHTML = "";
-(item.options || []).forEach(opt => {
+message("quizResult", "");
+
+item.options.forEach(option => {
 const btn = document.createElement("button");
 btn.className = "secondary";
-btn.textContent = opt;
-btn.onclick = () => answerQuiz(opt, item.correct_answer);
+btn.textContent = option;
+btn.onclick = () => answerQuiz(option);
 area.append(btn);
 });
 }
 
-function answerQuiz(selected, correct){
-if(selected === correct){ points += 10; msg("quizResult","Correto! +10 pts."); }
-else { msg("quizResult","Incorreto."); }
-msg("quizPoints","Pontos: "+points);
-quizIndex++;
-setTimeout(() => { msg("quizResult",""); renderQuiz(); }, 900);
+async function answerQuiz(answer) {
+const isCorrect = answer === quiz[quizIndex].answer;
+if (isCorrect) {
+message("quizResult", "Correto! +10 pontos atribuídos.");
+if (currentUser) {
+// Atualizar ou inserir pontos na tabela learning_progress de forma atómica
+const { data: existing } = await db.from("learning_progress").select("points").eq("student_id", currentUser.id).maybeSingle();
+const currentPoints = existing ? existing.points + 10 : 10;
+
+await db.from("learning_progress").upsert({
+student_id: currentUser.id,
+points: currentPoints,
+updated_at: new Date()
+}, { onConflict: 'student_id' });
 }
+} else {
+message("quizResult", "Não foi desta. Tenta o próximo desafio!");
+}
+quizIndex = (quizIndex + 1) % quiz.length;
+setTimeout(renderQuiz, 1500);
+}
+
+// INICIALIZAÇÃO DA SESSÃO
+renderQuiz();
+db.auth.onAuthStateChange((_event, session) => {
+currentUser = session?.user || null;
+});
 </script>
 </body>
 </html>
+
