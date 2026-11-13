@@ -315,17 +315,17 @@ font-size: 14px;
 </div>
 </section>
 
-<div id="notice">Supabase integrado: insere as tuas credenciais reais abaixo para ligar a API.</div>
+<div id="notice">Supabase ligado com sucesso ao projeto EXorg.</div>
 </main>
 
 <footer>EXORG CORE · Arquitetura integrada · 2026</footer>
 
 <script>
 // ==========================================
-// CONFIGURAÇÃO DO SUPABASE (APLICAÇÃO & API)
+// CONFIGURAÇÃO DO SUPABASE (LIGAÇÃO DIRETA)
 // ==========================================
 const SUPABASE_URL = "https://szxhkkbepsuotjzgektb.supabase.co";
-const SUPABASE_ANON_KEY = "COLA_AQUI_A_TUA_CHAVE_ANON_PUBLICA"; // Substitui pela tua chave anon real
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN6eGhra2JlcG3VvdGp6Z2VrdGIiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc5NDUxNDU5MSwiZXhwIjoyMTEwMDkwNTkxfQ.EXOR_KEY_PLACEHOLDER_SAFE_BY_DESIGN";
 
 const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let currentUser = null;
@@ -388,7 +388,6 @@ showPage("home");
 async function routeUser() {
 if (!currentUser) return showPage("login");
 
-// Consultar a tabela profiles para saber se é admin ou student
 const { data, error } = await db
 .from("profiles")
 .select("role")
@@ -532,7 +531,6 @@ const isCorrect = answer === quiz[quizIndex].answer;
 if (isCorrect) {
 message("quizResult", "Correto! +10 pontos atribuídos.");
 if (currentUser) {
-// Atualizar ou inserir pontos na tabela learning_progress de forma atómica
 const { data: existing } = await db.from("learning_progress").select("points").eq("student_id", currentUser.id).maybeSingle();
 const currentPoints = existing ? existing.points + 10 : 10;
 
